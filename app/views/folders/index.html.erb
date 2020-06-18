@@ -1,5 +1,6 @@
 <h1>folder index</h1>
-<%= @folders.each do |folder| %>
-<p><%= folder.name %></p>
-
+<% @folders.each_with_index do |folder, index| %>
+  <p>(<%= index %>)<%= folder.name %></p>
 <% end %>
+
+<%= link_to "create folder",new_folder_path  %>
