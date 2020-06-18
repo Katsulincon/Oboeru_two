@@ -1,5 +1,6 @@
 class FoldersController < ApplicationController
   def index
-    @folders = Folder.all
+    @folders = policy_scope(Folder)
+    # might have to change folder_policy
   end
 end
