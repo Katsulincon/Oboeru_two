@@ -1,0 +1,12 @@
+<h2>Folder show page</h2>
+
+<% @folder.paragraphs.each do |p| %>
+  <p><%= p.name %> | <%= p.sentence %></p>
+<% end %>
+
+<p>Create quizess</p>
+<%= simple_form_for @paragraph, :url => folder_paragraphs_path(@folder) do |f|  %>
+  <%= f.input :name %>
+  <%= f.input :sentence %>
+  <%= f.submit %>
+<% end %>
