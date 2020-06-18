@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_18_041128) do
+ActiveRecord::Schema.define(version: 2020_06_18_050323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,10 +24,19 @@ ActiveRecord::Schema.define(version: 2020_06_18_041128) do
     t.index ["paragraph_id"], name: "index_blanks_on_paragraph_id"
   end
 
+  create_table "folders", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "paragraphs", force: :cascade do |t|
     t.string "sentence"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "folder_id", null: false
+    t.string "name"
+    t.index ["folder_id"], name: "index_paragraphs_on_folder_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,4 +52,5 @@ ActiveRecord::Schema.define(version: 2020_06_18_041128) do
   end
 
   add_foreign_key "blanks", "paragraphs"
+  add_foreign_key "paragraphs", "folders"
 end
