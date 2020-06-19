@@ -1,4 +1,37 @@
 <h1>blanks new page</h1>
 
-<p><%= @paragraph.sentence %></p>
+<!-- <p><%= @paragraph.sentence %></p> -->
+
+ <table>
+      <tbody>
+        <tr>
+          <% @letter_array.each_with_index do |letter, index| %>
+            <td style="text-align: center" class="letter" data-letter-index='<%= index %>'><p><%=letter%></p></td>
+          <% end %>
+        </tr>
+      </tbody>
+  </table>
+
+<%= simple_form_for @blank, :url => folder_paragraph_blanks_path(@paragraph) do |f| %>
+  <%#= f.input :first_index %>
+  <%#= f.input :end_index %>
+  <%#= f.submit %>
+
+  <%#= f.input :first_index, multiple: true %>
+  <%#= f.input :end_index, multiple: true %>
+  <%#= f.submit %>
+
+  <% 0.upto(5) do |i| %>
+    <% n = i + 1 %>
+    <%= f.input_field :first_index, multiple: true, class: i + n %>
+    <% n += 1 %>
+    <%= f.input_field :end_index, multiple: true, class: i + n%>
+
+  <% end %>
+  <%= f.submit %>
+
+
+<% end %>
+
+
 

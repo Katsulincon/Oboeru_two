@@ -12,11 +12,10 @@ class ParagraphsController < ApplicationController
     authorize @folder
     # userはいらない??
     if @paragraph.save
-      # redirect_to folder_path(@folder)
-      redirect_to new_folder_paragraph_blank_path(@paragraph, @folder)
+      # blanks#newへ移動
+      redirect_to new_folder_paragraph_blank_path(@folder, @paragraph)
     else
       render 'folders/show'
-      raise
     end
 
 
