@@ -1,0 +1,11 @@
+const indexInput = () => {
+
+
+
+
+
+
+
+}
+
+export { indexInput }
