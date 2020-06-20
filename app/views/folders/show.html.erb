@@ -1,7 +1,9 @@
 <h2>Folder show page</h2>
 
 <% @folder.paragraphs.each do |p| %>
-  <p><%= p.name %> | <%= p.sentence %></p>
+  <%= link_to folder_paragraph_path(@folder, p) do %>
+    <p><%= p.name %></p>
+  <% end %>
 <% end %>
 
 <p>Create quizess</p>

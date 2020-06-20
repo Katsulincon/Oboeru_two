@@ -17,8 +17,11 @@ class ParagraphsController < ApplicationController
     else
       render 'folders/show'
     end
+  end
 
-
+  def show
+    @paragraph = Paragraph.find(params[:id])
+    authorize @paragraph
   end
 
   private

@@ -8,4 +8,8 @@ class ParagraphPolicy < ApplicationPolicy
   def create?
     return true
   end
+
+  def show?
+    record.folder.user == user
+  end
 end
