@@ -22,6 +22,24 @@ class ParagraphsController < ApplicationController
   def show
     @paragraph = Paragraph.find(params[:id])
     authorize @paragraph
+
+    letter_array = @paragraph.sentence.split('')
+    @blanks = @paragraph.blanks
+    blank_num = 1
+
+    @blanks.each do |blank|
+      blank_range = (blank.first_index..blank.end_index).to_a #[3, 4, 5, 6]
+
+      blank_range.each do |index|
+        letter_array[index] = '_'
+      end
+      letter_array[blank_range[0]] = " (#{blank_num.to_s})"
+      blank_num += 1
+    end
+    @practice_paragraph = letter_array.join
+
+
+
   end
 
   private

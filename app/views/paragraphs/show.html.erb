@@ -1,1 +1,28 @@
 <h1>Paragraph show page</h1>
+<div class="container">
+  <div class="practice-vontainer">
+
+
+    <div class="paragraph-card">
+      <p><%= @practice_paragraph %></p>
+    </div>
+
+    <div class="answer-cards-card">
+      <% @blanks.each_with_index do |blank, index| %>
+        <div class="card-product-infos flip-card" >
+          <div class="flip-card-inner" onclick="this.classList.toggle('flipped');">
+            <div class="flip-card-front">
+              <h2>(<%= index + 1 %>) Answer</h2>
+            </div>
+            <div class="flip-card-back">
+              <!-- put answer -->
+              <h2>(<%= index + 1 %>) <%= @paragraph.sentence[blank.first_index..blank.end_index] %></h2>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+
+  </div>
+</div>
