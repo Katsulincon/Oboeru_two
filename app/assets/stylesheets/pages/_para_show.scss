@@ -3,8 +3,17 @@
   justify-content: space-between;
   width: 72%;
   margin: 0 auto;
+  padding-top: 64px;
 }
 
 .paragraph-card {
   padding: 64px;
+  padding-top: 0;
+  width: 70%;
+}
+
+.answer-cards-card {
+  // padding-top: 64px;
+  overflow-y: scroll;
+  height: 70vh;
 }
