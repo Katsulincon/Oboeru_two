@@ -15,7 +15,7 @@ class FoldersController < ApplicationController
     authorize @folder
 
     if @folder.save
-      redirect_to folders_path
+      redirect_to folder_path(@folder)
     else
       render :new
     end
@@ -26,6 +26,30 @@ class FoldersController < ApplicationController
     @paragraph = Paragraph.new
     # authorize @paragraph
     authorize @folder
+  end
+
+  def edit
+    @folder = Folder.find(params[:id])
+    authorize @folder
+  end
+
+  def update
+    @folder = Folder.find(params[:id])
+    @folder.name = params[:folder][:name]
+    authorize @folder
+
+    if @folder.save
+      redirect_to folder_path(@folder)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @folder = Folder.find(params[:id])
+    auhotize @folder
+    @folder.destroy
+    redirect_to folders_path
   end
 
   private

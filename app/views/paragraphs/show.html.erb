@@ -1,10 +1,32 @@
+<%= link_to folder_path(@paragraph.folder) do %>
+  <p>←Back</p>
+<% end %>
+
 <h1>Paragraph show page</h1>
 <div class="page-container">
   <div class="practice-container">
 
 
     <div class="paragraph-card">
+      <div class="title d-flex">
+        <h2><%= @paragraph.name %></h2>
+        <%= link_to edit_folder_paragraph_path(@paragraph.folder, @paragraph) do %>
+          <i class="fas fa-pen"></i>
+        <% end %>
+      </div>
       <p><%= @practice_paragraph %></p>
+      <div class="option-footer">
+        <!-- add a link here -->
+        <%= link_to edit_folder_paragraph_blank_path(@paragraph.folder, @paragraph) do %>
+          <p>Reset & Edit blanks</p>
+        <% end %>
+
+        <%= link_to destroy_paragraph_path(@paragraph.folder, @paragraph), method: :delete, data: {confirm: "Are you sure?"} do  %>
+          <p class="delete-option">Delete this practice</p>
+        <% end %>
+
+
+      </div>
     </div>
 
     <div class="answer-cards-card">

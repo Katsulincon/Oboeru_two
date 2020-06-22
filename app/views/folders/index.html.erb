@@ -1,8 +1,13 @@
 <h1>folder index</h1>
 <% @folders.each_with_index do |folder, index| %>
-  <%= link_to folder_path(folder) do %>
-    <p>(<%= index %>)<%= folder.name %></p>
-  <% end %>
+
+  <div class="card">
+    <%= link_to folder_path(folder) do %>
+      <p><%= folder.name %></p>
+      <%= link_to "delete this folder", destroy_folder_path(folder)   %>
+    <% end %>
+  </div>
+
 <% end %>
 
 <%= link_to "create folder",new_folder_path  %>

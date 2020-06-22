@@ -38,9 +38,34 @@ class ParagraphsController < ApplicationController
     end
     @practice_paragraph = letter_array.join
 
-
-
   end
+
+  def edit
+    @paragraph = Paragraph.find(params[:id])
+    @folder = Folder.find(params[:folder_id])
+    authorize @paragraph
+  end
+
+  def update
+    @paragraph = Paragraph.find(params[:id])
+    @paragraph.name = params[:paragraph][:name]
+    authorize @paragraph
+    if @paragraph.save
+      redirect_to folder_paragraph_path(@paragraph.folder, @paragraph)
+    else
+      raise
+      render :edit
+    end
+  end
+
+  def destroy
+    paragraph = Paragraph.find(params[:id])
+    authorize paragraph
+    paragraph.blanks.destroy_all
+    paragraph.delete
+    redirect_to folder_path(paragraph.folder)
+  end
+
 
   private
 

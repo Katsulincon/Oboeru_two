@@ -12,4 +12,13 @@ class ParagraphPolicy < ApplicationPolicy
   def show?
     record.folder.user == user
   end
+
+  def destroy?
+    record.folder.user == user
+
+  end
+
+  def update?
+    record.folder.user == user
+  end
 end

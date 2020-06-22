@@ -17,3 +17,10 @@
   overflow-y: scroll;
   height: 70vh;
 }
+
+.option-footer {
+  display: flex;
+  .delete-option {
+    margin-left: 24px;
+  }
+}
