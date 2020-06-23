@@ -1,4 +1,12 @@
-<%= simple_form_for (@folder) do |f| %>
-  <%= f.input :name  %>
-  <%= f.submit %>
-<% end %>
+
+
+<div class="container mt-3">
+
+  <h3>What is the new folder name?</h3>
+
+  <%= simple_form_for (@folder) do |f| %>
+    <%= f.input :name  %>
+    <%= f.submit class: "submit-btn", value: "Update"%>
+  <% end %>
+
+</div>

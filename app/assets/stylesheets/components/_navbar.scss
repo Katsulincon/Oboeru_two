@@ -14,3 +14,17 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-nav a:hover {
+  background-color: transparent;
+  text-decoration: none;
+  color: $qyellow;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: $qyellow;
+}

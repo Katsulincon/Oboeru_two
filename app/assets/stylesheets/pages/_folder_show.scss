@@ -33,3 +33,16 @@ input#paragraph_sentence {
     overflow: auto;
   }
 }
+
+.submit-btn {
+    margin-top: 16px;
+    color: white;
+    background-color: $light-blue;
+    border-radius: 6px;
+    border: none;
+    padding: 8px 12px;
+  }
+  .submit-btn:hover {
+    background-color: $qyellow;
+    transition: 0.2s;
+  }

@@ -1,4 +1,10 @@
-<%= simple_form_for [@folder, @paragraph] do |f| %>
-  <%= f.input :name %>
-  <%= f.submit %>
-<% end %>
+<div class="container mt-3">
+
+  <h3>What is the new name for this practice?</h3>
+
+  <%= simple_form_for [@folder, @paragraph] do |f| %>
+    <%= f.input :name %>
+    <%= f.submit class: "submit-btn", value: "Update"%>
+  <% end %>
+
+</div>
