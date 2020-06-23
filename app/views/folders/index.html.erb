@@ -1,13 +1,40 @@
-<h1>folder index</h1>
-<% @folders.each_with_index do |folder, index| %>
+<!-- <h1>folder index</h1>
+<%# @folders.each_with_index do |folder, index| %>
 
   <div class="card">
-    <%= link_to folder_path(folder) do %>
-      <p><%= folder.name %></p>
-      <%= link_to "delete this folder", destroy_folder_path(folder)   %>
+    <%#= link_to folder_path(folder) do %>
+      <p><%#= folder.name %></p>
+      <%#= link_to "delete this folder", destroy_folder_path(folder)   %>
+    <%# end %>
+  </div>
+
+<%# end %>
+
+<%#= link_to "create folder",new_folder_path  %> -->
+
+
+<!-- previous -->
+<div class="folders-container mt-4">
+
+  <div class="folders-header">
+    <h1>Folders(<%= @folders.count %>)</h1>
+    <%= link_to new_folder_path do %>
+      <div class="create-folder-link">
+        <i class="fas fa-folder"></i>
+        <p>Create</p>
+      </div>
     <% end %>
   </div>
 
-<% end %>
 
-<%= link_to "create folder",new_folder_path  %>
+  <div class="folders-cards mt-2">
+    <% @folders.each do |folder| %>
+      <%= link_to folder_path(folder) do  %>
+        <div class="folders-card-category folders-card">
+          <h2><%= folder.name %></h2>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>

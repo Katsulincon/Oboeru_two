@@ -13,6 +13,9 @@
       <%= link_to edit_folder_path(@folder) do %>
         <i class="fas fa-pen"></i>
       <% end %>
+      <%= link_to destroy_folder_path(@folder), method: :delete, data: {confirm: "Are you sure?"} do  %>
+        <i class="fas fa-trash"></i>
+      <% end %>
     </div>
 
 

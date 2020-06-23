@@ -26,12 +26,87 @@
   // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-bottom: 6px solid white;
   p {
     margin-bottom: 0;
     // color: $qgray;
     color: black;
   }
 
+}
+
+.card-category:hover {
+  border-bottom: 6px solid $qyellow;
+  transition: 0.6s;
+  text-decoration: none;
+}
+
+.folders-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin: 0 20px;
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.folders-card {
+  background-color: white;
+  text-decoration: none;
+  border-bottom: 6px solid white;
+  h2 {
+    color: black;
+  }
+}
+.folders-card:hover {
+  border-bottom: 6px solid $qyellow;
+  transition: 0.6s;
+  text-decoration: none;
+}
+
+.folders-card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.folders-container {
+  margin: 0 auto;
+  width: 74%;
+}
+.folders-header {
+  display: flex;
+  padding-left: 16px;
+  a {
+   text-decoration: none;
+  }
+}
+
+.create-folder-link {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  margin-left: 12px;
+  font-size: 18px;
+  color: $light-blue;
+
+  p {
+    margin-bottom: 0;
+    margin-left: 6px;
+  }
+}
+.create-folder-link:hover {
+  color: $qyellow;
 }
 
 

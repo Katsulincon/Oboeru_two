@@ -47,7 +47,7 @@ class FoldersController < ApplicationController
 
   def destroy
     @folder = Folder.find(params[:id])
-    auhotize @folder
+    authorize @folder
     @folder.destroy
     redirect_to folders_path
   end
