@@ -1,38 +1,39 @@
 <div class="page-container">
 
-<div class="back-link">
-  <%= link_to folders_path do %>
-    <p>←Back</p>
-  <% end %>
-</div>
-
-<div class="lists-container">
-
-  <div class="title d-flex">
-    <h2><%= @folder.name %></h2>
-    <%= link_to edit_folder_path(@folder) do %>
-      <i class="fas fa-pen"></i>
+  <div class="back-link">
+    <%= link_to folders_path do %>
+      <p>←Back</p>
     <% end %>
   </div>
 
+  <div class="lists-container">
 
-  <div class="cards">
-    <% @folder.paragraphs.each do |p| %>
-      <%= link_to folder_paragraph_path(@folder, p) do %>
-        <div class="card-category">
-          <p><%= p.name %></p>
-        </div>
+    <div class="title d-flex">
+      <h2><%= @folder.name %></h2>
+      <%= link_to edit_folder_path(@folder) do %>
+        <i class="fas fa-pen"></i>
       <% end %>
-    <% end %>
+    </div>
+
+
+    <div class="cards">
+      <% @folder.paragraphs.each do |p| %>
+        <%= link_to folder_paragraph_path(@folder, p) do %>
+          <div class="card-category">
+            <p><%= p.name %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
   </div>
 
-</div>
-
-  <p>Create quizess</p>
-  <%= simple_form_for @paragraph, :url => folder_paragraphs_path(@folder) do |f|  %>
-    <%= f.input :name %>
-    <%= f.input :sentence %>
-    <%= f.submit %>
-  <% end %>
-
+  <div class="form-container">
+    <h3>Add new practice</h3>
+    <%= simple_form_for @paragraph, :url => folder_paragraphs_path(@folder) do |f|  %>
+      <%= f.input :name, placeholder: "Type title of the practice" %>
+      <%= f.input :sentence, placeholder: "Type sentences ",:as => :text, :input_html => {:style => 'width: 100%', :rows => 10, :cols =>30 }  %>
+      <%= f.submit class: "submit-btn", value: "Create" %>
+    <% end %>
+  </div>
 </div>
