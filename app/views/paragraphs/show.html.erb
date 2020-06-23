@@ -1,9 +1,13 @@
-<%= link_to folder_path(@paragraph.folder) do %>
-  <p>←Back</p>
-<% end %>
 
-<h1>Paragraph show page</h1>
+
+<!-- <h1>Paragraph show page</h1> -->
 <div class="page-container">
+  <div class="back-link">
+    <%= link_to folder_path(@paragraph.folder) do %>
+      <p>←Back</p>
+    <% end %>
+  </div>
+
   <div class="practice-container">
 
 

@@ -3,24 +3,60 @@
   justify-content: space-between;
   width: 72%;
   margin: 0 auto;
-  padding-top: 64px;
+  // padding-top: 64px;
+  padding-bottom: 32px;
+
 }
 
 .paragraph-card {
   padding: 64px;
-  padding-top: 0;
+  padding-top: 48px;
   width: 70%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  p {
+    margin-top: 16px;
+  }
 }
 
 .answer-cards-card {
   // padding-top: 64px;
   overflow-y: scroll;
   height: 70vh;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .option-footer {
   display: flex;
   .delete-option {
     margin-left: 24px;
+  }
+  a {
+    text-decoration: none;
+    color: $light-blue;
+  }
+}
+
+.title .fas{
+  margin-top: 14px;
+  margin-left: 8px;
+  font-size: 16px;
+  color: #FFCD1F;
+}
+
+// .page-container {
+//   position: relative;
+// }
+
+.back-link {
+  width: 64px;
+  // position: absolute;
+  margin-top: 16px;
+  margin-left: 16px;
+  p {
+    color: lightslategray;
+
+  }
+  a {
+    text-decoration: none;
   }
 }

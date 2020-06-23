@@ -41,7 +41,7 @@
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
   background-color: white;
-  color: lightblue;
+  color: $light-blue;
   // color: #66B6A5;
   h2 {
     font-size: 21px;
@@ -50,7 +50,7 @@
 
 /* Style the back side */
 .flip-card-back {
-  background-color: lightblue;
+  background-color: $light-blue;
   color: white;
   transform: rotateY(180deg);
   h2 {
