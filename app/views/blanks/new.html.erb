@@ -1,43 +1,38 @@
-<div class="head d-flex">
-  <h1>blanks new page</h1>
+<div class="container">
+  <div class="head d-flex">
+    <h2>Create Blanks</h2>
 
-  <div class="reset-btn btn btn-secondary">
-    <p>Reset Blanks</p>
+    <div class="reset-btn btn">
+      <p>Reset Blanks</p>
+    </div>
   </div>
-</div>
+  <div class="explanation">
+    <p>Please click the first letter and the last letter for blanks!</p>
+  </div>
 
-<!-- <p><%= @paragraph.sentence %></p> -->
 
- <table>
-      <tbody>
-        <tr>
-          <% @letter_array.each_with_index do |letter, index| %>
-            <td style="text-align: center" class="letter" data-letter-index='<%= index %>'><p><%=letter%></p></td>
-          <% end %>
-        </tr>
-      </tbody>
-  </table>
+   <table>
+        <tbody>
+          <tr>
+            <% @letter_array.each_with_index do |letter, index| %>
+              <td style="text-align: center" class="letter" data-letter-index='<%= index %>'><p><%=letter%></p></td>
+            <% end %>
+          </tr>
+        </tbody>
+    </table>
 
-<%= simple_form_for @blank, :url => folder_paragraph_blanks_path(@paragraph) do |f| %>
-  <%#= f.input :first_index %>
-  <%#= f.input :end_index %>
-  <%#= f.submit %>
+  <%= simple_form_for @blank, :url => folder_paragraph_blanks_path(@paragraph) do |f| %>
+    <% 0.upto(20) do |i| %>
+      <% n = i + 1 %>
+      <%= f.input_field :first_index, multiple: true, class: 'input_form', id: i + n, as: :hidden %>
+      <% n += 1 %>
+      <%= f.input_field :end_index, multiple: true, class: 'input_form', id: i + n, as: :hidden %>
 
-  <%#= f.input :first_index, multiple: true %>
-  <%#= f.input :end_index, multiple: true %>
-  <%#= f.submit %>
-
-  <% 0.upto(20) do |i| %>
-    <% n = i + 1 %>
-    <%= f.input_field :first_index, multiple: true, class: 'input_form', id: i + n, as: :hidden %>
-    <% n += 1 %>
-    <%= f.input_field :end_index, multiple: true, class: 'input_form', id: i + n, as: :hidden %>
-
+    <% end %>
+    <%= f.submit class: "new_blank_btn" %>
   <% end %>
-  <%= f.submit %>
 
-
-<% end %>
+</div>
 
 
 

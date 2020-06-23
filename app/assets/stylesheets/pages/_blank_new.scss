@@ -15,3 +15,62 @@ tr {
 .red {
   color: red;
 }
+
+// table {
+//   margin: 40px auto;
+// }
+.container {
+  width: 74%;
+  margin: 0 auto;
+  padding: 0 10%;
+  margin-bottom: 32px;
+}
+
+.head {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  h2 {
+    margin-bottom: 0;
+    padding-top: 2px;
+  }
+}
+
+.reset-btn {
+  margin-left: 16px;
+  color: $qyellow;
+  padding: 14px;
+  // background-color: $light-blue;
+  border-radius: 6px;
+  border: 1px solid $qyellow;
+  padding: 8px 12px;
+  margin-bottom: 2px;
+  p {
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+}
+.reset-btn:hover {
+  color: white;
+  background-color: $qyellow;
+  transition: 0.1s;
+}
+
+.explanation p {
+  color: darkgrey;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.new_blank_btn {
+  margin-top: 16px;
+  color: white;
+  background-color: $light-blue;
+  border-radius: 6px;
+  border: none;
+  padding: 8px 12px;
+}
+
+.new_blank_btn:hover {
+  background-color: $qyellow;
+  transition: 0.2s;
+}
